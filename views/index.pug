@@ -1,0 +1,43 @@
+extends layout
+
+block content
+	.jumbotron.text-center.logInDisplay
+		.card
+			.card-body
+				i.ionicons.ion-log-in#logInLogo 
+				p Simple Authentication System
+				hr
+				.alert.alert-success#regSucc
+					b Success
+					.glyphicon.glyphicon-remove#close_error
+	
+				.alert.alert-danger#err
+					b Error
+					.glyphicon.glyphicon-remove#close_error
+				
+				#inputRegisterFeilds
+					input(type='text', name="name", placeholder="Name" )
+					input(type='text', name="username", placeholder="Username" )
+					input(type='email', name="email", placeholder="Enter your mail Id")
+					input(type='password', name="password", placeholder="Password")
+					input(type='password', name="cnfpassword", placeholder="Confirm Password")
+					div(style="text-align:center;padding:15px;")
+						button.showReply(id="registerBtn" type="submit" name="submit") Register
+					.modal-footer
+						.options
+							p
+								| Already a member ? 
+								span#logInLink LogIn 
+
+				#inputLoginFeilds
+					input(type='text', name="username", placeholder="Username" autocomplete="off")
+					input(type='password', name="password", placeholder="Password")
+					div(style="text-align:center;padding:15px")
+						button.showReply(id="logInBtn" type="submit" name="submit") LogIn
+					.modal-footer
+						.options
+							p
+								| Not a member? 
+								span#signUpLink Sign Up
+				
+	script(src='javascripts/review.js')

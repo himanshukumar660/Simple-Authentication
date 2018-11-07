@@ -1,0 +1,11 @@
+extends layout
+
+block content
+	#content(style="width:100%;margin:0px auto;text-align:center")
+		h1= message
+		img(src="/images/loginSucc.png" alt="Smiley face")
+		form(method="GET", action="/user/logout")
+			div(style="text-align:center;padding:15px")
+				button.showReply(id="loginBtn" type="submit" name="submit" style="float:unset") LogOut
+		
+	script(src='javascripts/review.js')
